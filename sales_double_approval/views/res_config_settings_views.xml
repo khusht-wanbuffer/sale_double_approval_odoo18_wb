@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.form.view.inherit.sales.order.double.approval</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='sale_management']//block[@id='pricing_setting_container']" position="after">
+                <block title="Sale Order Approval" id="sale_order_approval_setting_container">
+                    <setting id="so_approval" help="Request managers to approve orders above a minimum amount">
+                        <field name="so_approval"/>
+                        <div class="content-group" invisible="not so_approval">
+                            
+                            <!-- Clean Table Layout -->
+                            <div class="mt16">
+                                <div>
+                                    
+                                    <!-- Responsive Table -->
+                                    <div style="overflow-x: auto;">
+                                        <table style="width: 100%; max-width: 650px; border-collapse: collapse; margin: 0; font-size: 14px; background-color: #fff;">
+                                            <thead>
+                                                <tr style="background-color: #f8f9fa;">
+                                                    <th style="padding: 12px 8px; text-align: center; border: 2px solid #dee2e6; font-weight: 600; width: 20%;">Price Range</th>
+                                                    <th style="padding: 12px 8px; text-align: center; border: 2px solid #dee2e6; font-weight: 600; width: 25%;">Min</th>
+                                                    <th style="padding: 12px 8px; text-align: center; border: 2px solid #dee2e6; font-weight: 600; width: 25%;">Max</th>
+                                                    <th style="padding: 12px 8px; text-align: center; border: 2px solid #dee2e6; font-weight: 600; width: 30%;">Approval</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Row 1 -->
+                                                <tr>
+                                                    <td style="padding: 10px 8px; text-align: center; border: 1px solid #dee2e6; background-color: #e9ecef; font-weight: 500;"></td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="so_min_amount" nolabel="1" style="width: 80px; text-align: center; "/>
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="so_max_amount" nolabel="1" style="width: 80px; text-align: center; "/>
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="approval" nolabel="1" style="width: 120px; "/>
+                                                    </td>
+                                                </tr>
+                                                <!-- Row 2 -->
+                                                <tr style="background-color: #f8f9fa;">
+                                                    <td style="padding: 10px 8px; text-align: center; border: 1px solid #dee2e6; background-color: #e9ecef; font-weight: 500;"></td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="so_min_amount2" nolabel="1" style="width: 80px; text-align: center; "/>
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="so_max_amount2" nolabel="1" style="width: 80px; text-align: center; "/>
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="approval2" nolabel="1" style="width: 120px; "/>
+                                                    </td>
+                                                </tr>
+                                                <!-- Row 3-->
+                                                <tr>
+                                                    <td style="padding: 10px 8px; text-align: center; border: 1px solid #dee2e6; background-color: #e9ecef; font-weight: 500;"></td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="so_min_amount3" nolabel="1" style="width: 80px; text-align: center; "/>
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                       Maximum Amount
+                                                    </td>
+                                                    <td style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">
+                                                        <field name="approval3" nolabel="1" style="width: 120px;"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

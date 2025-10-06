@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Action: To show quotations/orders that need approval -->
+    <record id="action_to_approve_quotation" model="ir.actions.act_window">
+        <field name="name">To Approve Quotation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_to_approve': 1}</field>
+        <field name="domain">[('state', '=', 'to_approve')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No quotations need approval!
+            </p>
+            <p>
+                All quotations that require manager approval will appear here.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item: To Approve Quotation under Orders -->
+    <menuitem id="menu_to_approve_quotation"
+              name="To Approve Quotation" 
+              parent="sale.sale_order_menu"  
+              action="action_to_approve_quotation"
+              sequence="15"/>
+
+</odoo>
